@@ -1,0 +1,9 @@
+#!/usr/local/bin/bash
+# Written using information from FreeNAS forum, tested on FreeBSD 10.2
+# https://forums.freenas.org/index.php?threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/
+cmdout=`camcontrol cmd $1 -a "E5 00 00 00 00 00 00 00 00 00 00 00" -r -`
+if [ "$(echo $cmdout | cut -d' ' -f10)" = "FF" ]; then
+        echo "$1: spinning"
+else
+        echo "$1: standby"
+fi
