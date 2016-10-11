@@ -1,0 +1,11 @@
+#!/bin/sh
+# Original author: http://blog.goo.ne.jp/nhh0/e/7f6ede4b980511cb0f6e7b0155f46500
+# Edited by: github.com/angelos-se
+# Place in your path and chmod +x mcookie
+# Tested on FreeBSD 11
+mcookie=`dd if=/dev/random bs=16 count=1 2>/dev/null | hexdump -e \\"%08x\\"`
+if [ x"$mcookie" = x ] ; then
+                echo "Couldn't create cookie"
+                exit 1
+fi
+echo $mcookie
