@@ -1,4 +1,6 @@
 #!/bin/bash
+# This script has been deprecated by the following downsteam project with better polish
+# https://gitlab.com/ct-hkhpc-public/ipmi-sel-archiver
 
 # This script shall be placed in /etc/cron.daily and made executable
 # This script fetches System Event Log using ipmitool, sends new SEL to syslog
